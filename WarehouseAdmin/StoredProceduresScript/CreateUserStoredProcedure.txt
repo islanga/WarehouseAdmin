@@ -1,0 +1,56 @@
+﻿-- List Users
+
+CREATE PROC [dbo].[GetUsers]
+AS
+BEGIN
+	SELECT 
+		[Email], 
+		[Password] 
+	FROM 
+		Users;
+END
+
+-- Edit User
+
+ALTER PROC [dbo].[UpdateUser]
+	@Id [INT],
+	@Email [nvarchar](max),
+	@Password [nvarchar](max)
+AS
+BEGIN
+	UPDATE 
+		Users 
+	SET 
+		[Email] = @Email, 
+		[Password] = @Password 
+	WHERE 
+		Id = @Id; 
+END
+
+-- Insert User
+
+ALTER PROC [dbo].[InsertUser]
+	@Email [nvarchar](max),
+	@Password [nvarchar](max)
+AS
+BEGIN
+	INSERT INTO Users (
+		[Email], 
+		[Password]
+	) VALUES(
+		@Email, 
+		@Password
+	);
+END
+
+-- Delete User
+
+ALTER PROC [dbo].[DeleteUser]
+	@Id [INT]
+AS
+BEGIN
+	DELETE FROM 
+		Users 
+	WHERE 
+		Id = @Id; 
+END

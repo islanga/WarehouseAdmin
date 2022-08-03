@@ -1,0 +1,6 @@
+﻿
+-- Create the database 
+CREATE DATABASE Warehouse;
+
+-- Select the database
+USE Warehouse;

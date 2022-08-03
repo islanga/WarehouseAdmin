@@ -1,0 +1,97 @@
+﻿-- List Products
+
+CREATE PROC [dbo].[GetAllProducts]
+AS
+BEGIN
+	SELECT 
+		[ProductID],
+		[ProductName],
+		[SupplierID],
+		[CategoryID],
+		[QuantityPerUnit],
+		[UnitPrice],
+		[UnitsInStock],
+		[UnitsOnOrder],
+		[ReorderLevel],
+		[Discontinued]
+	FROM 
+		Products;
+END
+
+-- Edit Product
+
+CREATE PROC [dbo].[UpdateProduct]
+	@ProductID [INT],
+	@ProductName [nvarchar](40),
+	@SupplierID [int],
+	@CategoryID [int],
+	@QuantityPerUnit [nvarchar](20),
+	@UnitPrice [money],
+	@UnitsInStock [smallint],
+	@UnitsOnOrder [smallint],
+	@ReorderLevel [smallint],
+	@Discontinued [bit]
+AS
+BEGIN
+	UPDATE Products SET
+		[ProductName]     = @ProductName, 
+		[SupplierID]      = @SupplierID, 
+		[CategoryID]      = @CategoryID,
+		[QuantityPerUnit] = @QuantityPerUnit,
+		[UnitPrice]       = @UnitPrice,
+		[UnitsInStock]    = @UnitsInStock,
+		[UnitsOnOrder]    = @UnitsOnOrder,
+		[ReorderLevel]    = @ReorderLevel,
+		[Discontinued]    = @Discontinued
+	WHERE
+		[ProductID] = @ProductID;
+END
+
+-- Insert Product
+
+CREATE PROC [dbo].[InsertProduct]
+	@ProductName [nvarchar](40),
+	@SupplierID [int],
+	@CategoryID [int],
+	@QuantityPerUnit [nvarchar](20),
+	@UnitPrice [money],
+	@UnitsInStock [smallint],
+	@UnitsOnOrder [smallint],
+	@ReorderLevel [smallint],
+	@Discontinued [bit]
+AS
+BEGIN
+	INSERT INTO Products (
+		[ProductName], 
+		[SupplierID], 
+		[CategoryID], 
+		[QuantityPerUnit], 
+		[UnitPrice], 
+		[UnitsInStock], 
+		[UnitsOnOrder], 
+		[ReorderLevel], 
+		[Discontinued]
+	) VALUES(
+		@ProductName, 
+		@SupplierID, 
+		@CategoryID, 
+		@QuantityPerUnit, 
+		@UnitPrice, 
+		@UnitsInStock, 
+		@UnitsOnOrder, 
+		@ReorderLevel, 
+		@Discontinued
+	);
+END
+
+-- Delete Product
+
+CREATE PROC [dbo].[DeleteProduct]
+	@ProductID [INT]
+AS
+BEGIN
+	DELETE FROM 
+		Products 
+	WHERE 
+		ProductID = @ProductID;
+END

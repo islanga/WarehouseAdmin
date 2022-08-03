@@ -110,5 +110,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="DatabaseScript\CreateCategoryTable.txt" />
+    <Content Include="DatabaseScript\CreateDatabase.txt" />
+    <Content Include="DatabaseScript\CreateProductTable.txt" />
+    <Content Include="DatabaseScript\CreateSupplierTable.txt" />
+    <Content Include="DatabaseScript\CreateUserTable.txt" />
+    <Content Include="StoredProceduresScript\CreateCategoryStoredProcedures.txt" />
+    <Content Include="StoredProceduresScript\CreateProductStoredProcedure.txt" />
+    <Content Include="StoredProceduresScript\CreateSupplierStoredProcedure.txt" />
+    <Content Include="StoredProceduresScript\CreateUserStoredProcedure.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

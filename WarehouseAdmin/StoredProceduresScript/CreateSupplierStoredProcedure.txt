@@ -1,0 +1,109 @@
+﻿-- List Suppliers
+
+CREATE PROC [dbo].[GetAllSuppliers]
+AS
+BEGIN
+	SELECT
+		[SupplierID],
+		[CompanyName],
+		[ContactName],
+		[ContactTitle],
+		[Address],
+		[City],
+		[Region],
+		[PostalCode],
+		[Country],
+		[Phone],
+		[Fax],
+		[HomePage] 
+	FROM
+		Suppliers
+END
+
+-- Edit Supplier
+
+CREATE PROC [dbo].[UpdateSupplier] 
+	@SupplierID [int],
+	@CompanyName [nvarchar](40),
+	@ContactName [nvarchar](30),
+	@ContactTitle [nvarchar](30),
+	@Address [nvarchar](60),
+	@City [nvarchar](15),
+	@Region [nvarchar](15),
+	@PostalCode [nvarchar](10),
+	@Country [nvarchar](15),
+	@Phone [nvarchar](24),
+	@Fax [nvarchar](24),
+	@HomePage [ntext]
+AS
+BEGIN
+	UPDATE Suppliers SET
+		[CompanyName] = @CompanyName,
+		[ContactName] = @ContactName,
+		[ContactTitle] = @ContactTitle,
+		[Address] = @Address,
+		[City] = @City,
+		[Region] = @Region,
+		[PostalCode] = @PostalCode,
+		[Country] = @Country,
+		[Phone] = @Phone,
+		[Fax] = @Fax,
+		[HomePage] = @HomePage
+	WHERE
+		[SupplierID] = @SupplierID;
+END
+
+-- Insert Supplier
+
+CREATE PROC [dbo].[InsertSupplier]
+	@CompanyName [nvarchar](40),
+	@ContactName [nvarchar](30),
+	@ContactTitle [nvarchar](30),
+	@Address [nvarchar](60),
+	@City [nvarchar](15),
+	@Region [nvarchar](15),
+	@PostalCode [nvarchar](10),
+	@Country [nvarchar](15),
+	@Phone [nvarchar](24),
+	@Fax [nvarchar](24),
+	@HomePage [ntext]
+AS
+BEGIN
+	INSERT INTO Suppliers (
+		[CompanyName],
+		[ContactName],
+		[ContactTitle],
+		[Address],
+		[City],
+		[Region],
+		[PostalCode],
+		[Country],
+		[Phone],
+		[Fax],
+		[HomePage]
+	) VALUES (
+		@CompanyName,
+		@ContactName,
+		@ContactTitle,
+		@Address,
+		@City,
+		@Region,
+		@PostalCode,
+		@Country,
+		@Phone,
+		@Fax,
+		@HomePage
+	);
+END
+
+-- Delete Supplier
+
+CREATE PROC [dbo].[DeleteSupplier] 
+	@SupplierID [int]
+AS
+BEGIN
+	DELETE FROM 
+		Suppliers 
+	WHERE
+		[SupplierID] = @SupplierID;
+END
