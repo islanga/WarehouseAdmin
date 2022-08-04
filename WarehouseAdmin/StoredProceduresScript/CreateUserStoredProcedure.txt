@@ -4,6 +4,7 @@ CREATE PROC [dbo].[GetUsers]
 AS
 BEGIN
 	SELECT 
+		[Id],
 		[Email], 
 		[Password] 
 	FROM 
