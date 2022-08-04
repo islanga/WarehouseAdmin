@@ -14,9 +14,6 @@ namespace WarehouseAdmin
 {
     public partial class Admin : Form
     {
-        SqlConnection conn;
-        SqlCommand cmd;
-
         public Admin()
         {
             InitializeComponent();
@@ -26,9 +23,6 @@ namespace WarehouseAdmin
 
         private void Admin_Load(object sender, EventArgs e)
         {
-            conn = new SqlConnection(@"Data Source=.;Initial Catalog=SchoolDB;Integrated Security=True");
-            cmd = new SqlCommand();
-            cmd.Connection = conn;
         }
 
         private void addUserControl(UserControl userControl)
