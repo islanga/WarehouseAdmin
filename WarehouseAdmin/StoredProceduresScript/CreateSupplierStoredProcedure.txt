@@ -107,3 +107,28 @@ BEGIN
 	WHERE
 		[SupplierID] = @SupplierID;
 END
+
+-- Search Supplier by id
+
+CREATE PROC [dbo].[SearchSupplier]
+@SupplierID [INT]
+AS
+BEGIN
+	SELECT 
+		[SupplierID],
+		[CompanyName],
+		[ContactName],
+		[ContactTitle],
+		[Address],
+		[City],
+		[Region],
+		[PostalCode],
+		[Country],
+		[Phone],
+		[Fax],
+		[HomePage]
+	FROM
+		Suppliers
+	WHERE
+		[SupplierID] = @SupplierID;
+END
