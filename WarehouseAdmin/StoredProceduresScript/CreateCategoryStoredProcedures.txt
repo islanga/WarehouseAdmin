@@ -13,18 +13,15 @@ END
 
 CREATE PROC [dbo].[InsertCategory]
 	@CategoryName [nvarchar](15),
-	@Description [ntext],
-	@Picture [image]
+	@Description [ntext]
 AS
 BEGIN
 	INSERT INTO Categories(
 		[CategoryName], 
-		[Description], 
-		[Picture]
+		[Description]
 	) VALUES(
 		@CategoryName, 
-		@Description, 
-		@Picture
+		@Description
 	);
 END
 
@@ -33,16 +30,14 @@ END
 CREATE PROC [dbo].[UpdateCategory]
 	@CategoryID [INT],
 	@CategoryName [nvarchar](15),
-	@Description [ntext],
-	@Picture [image]
+	@Description [ntext]
 AS
 BEGIN
 	UPDATE 
 		Categories 
 	SET 
 		[CategoryName] = @CategoryName, 
-		[Description] = @Description, 
-		[Picture] = @Picture 
+		[Description] = @Description
 	WHERE 
 		[CategoryID] = @CategoryID;
 END
@@ -57,4 +52,20 @@ BEGIN
 		Categories 
 	WHERE 
 		CategoryID = @CategoryID;
+END
+
+-- Search By Id
+
+CREATE PROC SearchCategory
+@CategoryID [INT]
+AS
+BEGIN
+	SELECT 
+		[CategoryID],
+		[CategoryName],
+		[Description]
+	FROM
+		Categories
+	WHERE
+		[CategoryID] = @CategoryID;
 END
