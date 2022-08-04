@@ -14,4 +14,4 @@ Installation
 - Change database connection on WarehouseAdminAPI/AppSettings.json
 
 Running the application
-- Set the api to run first so that it accessable by the admin applicaation
+- Set the api to run first so that the admin applicaation can consume those api
