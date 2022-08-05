@@ -1,7 +1,8 @@
                                                         Manage Categories, Products and Suppliers
 Technology Stack
+- .NET Core
 - Visual Studio 2022
-- Entity Framework Core
+- Entity Framework
 - SQL Server 2019
 
 Testing Tool
