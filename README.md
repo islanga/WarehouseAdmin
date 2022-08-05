@@ -2,7 +2,7 @@
 Technology Stack
 - .NET Core
 - Visual Studio 2022
-- Entity Framework
+- Entity Framework 6
 - SQL Server 2019
 
 Testing Tool
