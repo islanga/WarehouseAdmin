@@ -1,0 +1,15 @@
+𝗣𝗿𝗶𝗻𝗰𝗶𝗽𝗹𝗲𝘀 & 𝗕𝗲𝘀𝘁 𝗽𝗿𝗮𝗰𝘁𝗶𝗰𝗲𝘀 𝗼𝗳 𝗥𝗘𝗦𝗧 𝗔𝗣𝗜 𝗗𝗲𝘀𝗶𝗴𝗻
+
+The Six Principles / Constraints
+
+𝟭. 𝗖𝗹𝗶𝗲𝗻𝘁-𝗦𝗲𝗿𝘃𝗲𝗿: Separation of concerns is the principle behind the client-server constraints. By separating the user interface concerns from the data storage concerns, we improve the portability of the user interface across multiple platforms and improve scalability by simplifying the server components.
+
+𝟮. 𝗦𝘁𝗮𝘁𝗲𝗹𝗲𝘀𝘀: communication must be stateless, as in the client-stateless-server (CSS) style. Each request from the client to the server must contain all of the information necessary to understand the request. Session state is therefore kept entirely on the client.
+
+𝟯. 𝗖𝗮𝗰𝗵𝗲𝗮𝗯𝗹𝗲: To improve network efficiency, we add cache constraints to form the client-cache-stateless-server style. Cache constraints require that the data respond to a request with the implicit or explicit label as cacheable or non-cacheable. If a response is cacheable, then a client cache is given the right to reuse that response data for later, equivalent requests.
+
+𝟰. 𝗟𝗮𝘆𝗲𝗿𝗲𝗱 𝗦𝘆𝘀𝘁𝗲𝗺: A client cannot ordinarily tell whether it is connected directly to the end server or an intermediary along the way. Intermediary servers may improve system scalability by enabling load-balancing and by providing shared caches. Layers may also enforce security policies.
+
+𝟱. 𝗖𝗼𝗱𝗲-𝗼𝗻-𝗗𝗲𝗺𝗮𝗻𝗱: REST allows client functionality to extend by downloading and executing code in the form of applets or scripts. Simplifies clients by reducing the number of features required to be pre-implemented. It allows features to download after deployment improves system extensibility.
+
+𝟲. 𝗨𝗻𝗶𝗳𝗼𝗿𝗺 𝗜𝗻𝘁𝗲𝗿𝗳𝗮𝗰𝗲: By applying the software engineering principle of generality to the component interface, the overall system architecture becomes simplified, and the visibility of interactions is improved.
