@@ -7,3 +7,7 @@ Tools used
 Testing tools
 - Swagger
 - Postman
+
+Execute the application
+- Set the api as a starting project
+- The admin application should consume the api
